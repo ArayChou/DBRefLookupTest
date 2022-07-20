@@ -99,7 +99,7 @@ public class QueryTest {
 */
             Aggregation aggregationWorks = Aggregation.newAggregation(addMotherId, motherLookupWorks, unwind, where);
             List<PersonPo> result = mongoTemplate.aggregate(aggregationWorks, mongoTemplate.getCollectionName(PersonPo.class), PersonPo.class).getMappedResults();
-            Assertions.assertEquals(result.size(), 1);
+            Assertions.assertEquals(1, result.size());
         }
 
         // The following block does NOT work.
@@ -132,7 +132,7 @@ public class QueryTest {
 */
             Aggregation aggregationDoesNotWork = Aggregation.newAggregation(motherLookupDoesNotWork, unwind, where);
             List<PersonPo> emptyResult = mongoTemplate.aggregate(aggregationDoesNotWork, mongoTemplate.getCollectionName(PersonPo.class), PersonPo.class).getMappedResults();
-            Assertions.assertEquals(emptyResult.size(), 1);
+            Assertions.assertEquals(1, emptyResult.size());
         }
 
     }
