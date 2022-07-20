@@ -1,0 +1,1 @@
+A demo project for issue https://github.com/spring-projects/spring-data-mongodb/issues/4123
